@@ -1,6 +1,10 @@
 title: David Klotz
 twitter_username: ravenmokel
 github_username: dklotz
+# email: hmm, how to protect from spambots?
+author: David Klotz
+url: "https://www.davidklotz.de"
+permalink: pretty
 description: >- # ignore newlines until next key
   My personal blog about technology, software engineering and everything else
   that crosses my mind.
