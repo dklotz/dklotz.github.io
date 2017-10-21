@@ -1,5 +1,7 @@
 title: David Klotz
 twitter_username: ravenmokel
+twitter:
+  username: ravenmokel
 github_username: dklotz
 # email: hmm, how to protect from spambots?
 author: David Klotz
@@ -12,3 +14,6 @@ theme: minima
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-seo-tag
