@@ -1,1 +1,9 @@
-theme: jekyll-theme-minima
+title: David Klotz
+twitter_username: ravenmokel
+github_username: dklotz
+description: >- # ignore newlines until next key
+  My personal blog about technology, software engineering and everything else
+  that crosses my mind.
+theme: minima
+plugins:
+  - jekyll-feed
