@@ -6,8 +6,8 @@ author: David Klotz
 url: "https://www.davidklotz.de"
 permalink: pretty
 description: >- # ignore newlines until next key
-  My personal blog about technology, software engineering and everything else
-  that crosses my mind.
+  Thoughts on software engineering, technology and the rest of the world.
+  Personal blog, opinions are my own.
 theme: minima
 plugins:
   - jekyll-feed
