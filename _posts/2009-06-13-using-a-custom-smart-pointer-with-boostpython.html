@@ -1,0 +1,15 @@
+---
+layout: post
+title: Using a custom smart pointer with Boost.Python
+date: 2009-06-13 20:35:25.000000000 +02:00
+type: post
+tags:
+- c++
+- code
+- english
+- python
+author: David Klotz
+---
+<p>I'm currently working on creating a python wrapper for <a title="XCF" href="http://xcf.sf.net">XCF</a> using <a title="Boost.Python homepage" href="http://boost.org/libs/python/">Boost.Python</a>. During that project i stumbled upon the problem that i was wrapping some classes that used a custom smart pointer (i.e. not one from the boost library). Boost.Python is quite good at wrapping classes using smart pointers, but it has to know some things about the smart pointer used first.<!--more--></p>
+<p>Most importantly, it has to know how to get the "raw" pointer from the smart pointer and how to determine the type of the object that is being pointed to (given the type of the smart pointer). Finding documentation about telling Boost.Python how to work with an unknown type of smart pointer wasn't easy (which is why i am blogging this), but fortunately at some point i stumbled upon <a title="How to expose a custom smart pointer?" href="http://pyplusplus.readthedocs.io/en/latest/troubleshooting_guide/smart_ptrs/smart_ptrs.html">this</a>. It's from the documentation of the Py++-package, but you don't have to be using Py++ to use the technique described in there.</p>
+<p>You have to keep a lot of things in mind when implementing this (especially when the class your smart pointer is pointing to might also have some derived subclasses, in which case you should <strong>really</strong> take a look at the original example), but in essence it all boils down to <a title="Example from the XCF SVN" href="http://xcf.svn.sourceforge.net/viewvc/xcf/tools/xcf-python/IceHandlePython.hpp?view=markup&amp;revision=1262">this</a>. In that case, IceUtil::Handle&lt;T&gt; is the smart pointer i am working with. This class is coming from <a title="The Internet Communications Engine - ZeroC" href="http://www.zeroc.com/ice.html">Ice</a>, so if you're also using that, you might try creating something similar.</p>

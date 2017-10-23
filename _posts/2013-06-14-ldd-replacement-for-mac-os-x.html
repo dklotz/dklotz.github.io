@@ -1,0 +1,24 @@
+---
+layout: post
+title: ldd replacement for Mac OS X
+date: 2013-06-14 16:15:38.000000000 +02:00
+type: post
+tags:
+- c++
+- code
+- english
+author: David Klotz
+---
+<p>If you develop in C/C++, you will probably already know and love the <code>ldd</code> tool. If you don't know it, yet, <code>ldd</code> lets you check against which dynamic/shared libraries a given binary is currently linked (and which of them might be missing).</p>
+<p><!--more--></p>
+<p>If you come to Mac OS X with a Unix/GCC background, you will be quite surprised that the system seems to be lacking this essential utility. But fear not, there is another tool that can do this job under OS X just fine! Introducing: <a title="otool man page" href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/otool.1.html" target="_blank">otool</a>. It can do much more, but to use it as a direct substitute for <code>ldd</code>, just give it the <code>-L</code> switch and the path to the binary like this:</p>
+<blockquote><p><code>david@camaris:~/stuff$ otool -L rsb_videoreceiver<br />
+rsb_videoreceiver:<br />
+/usr/local/lib/librsc.0.7.dylib (compatibility version 0.0.0, current version 0.7.0)<br />
+/usr/local/lib/librsbcore.0.7.dylib (compatibility version 0.0.0, current version 0.7.0)<br />
+/usr/local/lib/libopencv_video.2.4.2.dylib (compatibility version 2.4.0, current version 2.4.2)<br />
+[...]<br />
+/usr/lib/libstdc++.6.dylib (compatibility version 7.0.0, current version 56.0.0)<br />
+/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 169.3.0)<br />
+</code></p></blockquote>
+<p>(via/Thanks to: <a title="Mac OS X tips by Sergei Chumakov" href="http://schumakov.info/howto-osx.php" target="_blank">Sergei Chumakov</a>)</p>
