@@ -1,10 +1,10 @@
-title: David Klotz
+title: David's Blog
+author: David Klotz
+# email: hmm, how to protect from spambots?
 twitter_username: ravenmokel
 twitter:
   username: ravenmokel
 github_username: dklotz
-# email: hmm, how to protect from spambots?
-author: David Klotz
 url: "https://www.davidklotz.de"
 permalink: pretty
 paginate: 3
@@ -15,9 +15,12 @@ description: >- # ignore newlines until next key
   Personal blog, opinions are my own.
 theme: minima
 header_pages:
-  - fahrten.html
+  - tags.html
   - about.md
   - impressum.md
+exclude:
+  - README.md
+  - fahrten.html # for now
 markdown: kramdown
 plugins:
   - jekyll-feed

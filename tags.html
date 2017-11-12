@@ -1,0 +1,15 @@
+---
+layout: page
+title: Tags
+permalink: /tags/
+---
+
+<div class="tagcloud">
+{% for tag in site.tags %}
+    <span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 170 }}%">
+        <a href="{{base_url}}/tags/{{ tag | first |downcase | slugize }}/">
+            {{ tag | first }}
+        </a>
+    </span>
+{% endfor %}
+</div>

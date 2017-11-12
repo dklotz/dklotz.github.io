@@ -1,0 +1,3 @@
+- move to jekyll
+- upgrading gitlab from 7.x to 10.x, db problems
+- using interfaces for mixin-style multiple inheritance in java

@@ -4,8 +4,6 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Blog entries:</h1>
-
   {{ content }}
 
   <ul class="post-list">
@@ -16,15 +14,16 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        <span class="post-content">
+        <!--<span class="post-content">
           {{ post.excerpt | remove: '<p>' | remove: '</p>' }} <a href="{{ post.url | relative_url }}">...</a>
-        </span>
+        </span>-->
       </li>
     {% endfor %}
   </ul>
 
   <!-- Pagination links -->
   <div class="pagination">
+    <p>
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path }}" class="previous">« Newer</a>
     {% endif %}
@@ -34,6 +33,7 @@ layout: default
     {% endif %}
     <span>&nbsp;</span>
     <span class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></span>
+    </p>
   </div>
 
 </div>
