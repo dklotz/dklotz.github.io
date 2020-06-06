@@ -5,5 +5,7 @@ permalink: /impressum/
 ---
 
 David Klotz \\
-Raesfeldstr. 14 \\
-48149 Münster
+Jahnallee 11 \\
+53173 Bonn
+
+mail -ät- davidklotz -punkt- de
